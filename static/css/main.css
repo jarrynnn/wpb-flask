@@ -1,0 +1,59 @@
+/* GLOBAL */
+body {
+  font: 1em Calibri, Sans-Serif;
+}
+
+a {
+  color: #0000FF;
+}
+
+a:hover {
+  color: #000099;
+}
+
+
+/* CONSTROLS */
+input, select {
+  border: 1px solid #545454;
+  margin: 0px;
+}
+
+
+/* CONTENT */
+div.content {
+  margin: 0.5em;
+}
+
+div.header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0.5em 0em;
+  text-align: center;
+}
+
+div.header span.left {
+  float: left;
+}
+
+div.header span.right {
+  float: right;
+}
+
+
+/* MENU */
+div.menu span.auth {
+  float: right;
+}
+
+div.menu span.menu-item {
+  padding-right: 1em;
+}
+
+div.menu span.menu-item a.today {
+  color: #FF9900;
+  float: right;
+}
+
+div.menu span.menu-item a.today:hover {
+  color: #CC3300;
+}
