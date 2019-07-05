@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, or_
+from sqlalchemy import Column, Integer, String
 from database import Base
 
 class Country(Base):
@@ -6,14 +6,18 @@ class Country(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(50), unique=True)
     stat = Column(Integer, nullable=False)
+    colour = Column(String(6), nullable=False)
 
-    def __init__(self, name=None, stat=0):
+    def __init__(self, name=None, stat=0, colour="000000"):
         self.name = name
         self.stat = stat
+        self.colour = colour
 
     def __repr__(self):
         return '%r (%s)' % (self.name, self.stat)
 
+def get_country(name=None):
+    return Country.query.filter(Country.name == name).first()
 
-def get_countries(name=None):
-    return Country.query.filter(or_(Country.name == name, name == None)).all()
+def get_countries():
+    return Country.query.all()

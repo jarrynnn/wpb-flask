@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>{% block title %}WPB{% endblock %}</title>
+
+    {% block head %}
+      <link rel="stylesheet" href="/static/css/main.css" />
+    {% endblock %}
+  </head>
+
+  {# Macro for rendering a menu item either as a link, or
+     as text if page is active #}
+  {% macro menu_item(caption, url, class) -%}
+    <span class="menu-item">
+      {% if active_page == caption or active_app == caption %}
+        {{ caption }}
+      {% else %}
+        <a class="{{ class }}" href="{{ url }}">{{ caption }}</a>
+      {% endif %}
+    </span>
+  {%- endmacro %}
+
+  <body>
+    {# Main Menu #}
+    <div class="menu">
+      {{ menu_item('Home', home_url) }}
+
+      {{ menu_item('Countries', countries_url) }}
+    </div>
+    
+    <div class="content">
+      {# Layout Menu #}
+      <div class="menu">
+        {% block menu %}{% endblock %}
+      </div>
+      
+      <div class="header">
+        {# Layout Previous Link Placeholder #}
+        <span class="left">
+          {% block header_left %}{% endblock %}
+        </span>
+
+        {# Layout Header #}
+        {{ header }}
+
+        {# Layout Next Link Placeholder #}
+        <span class="right">
+          {% block header_right %}{% endblock %}
+        </span>
+      </div>
+
+      {# Layout Content #}
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
