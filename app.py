@@ -41,6 +41,7 @@ def countries(country_name=None):
                 'label'     : c.name,
                 'stat'      : c.stat,
                 'colour'    : "#" + c.colour,
+                'background': "#" + c.colour,
                 'url'       : url_for('countries', country_name=c.name)
             } for c in get_countries()
         ],
