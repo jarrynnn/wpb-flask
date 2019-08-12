@@ -7,12 +7,17 @@ class Country(Base):
     name = Column(String(50), unique=True)
     stat = Column(Integer, nullable=False)
     colour = Column(String(6), nullable=False)
+    prev = Column(Integer, nullable=False)
+    year = Column(Integer, nullable=False)
+    
 
-    def __init__(self, name=None, stat=0, colour="000000", background="000000"):
+    def __init__(self, name=None, stat=0, colour="000000", background="000000", prev=0, year =0):
         self.name = name
         self.stat = stat
         self.colour = colour
         self.background = background
+        self.prev = prev
+        self.year = year
 
     def __repr__(self):
         return '%r (%s)' % (self.name, self.stat)
