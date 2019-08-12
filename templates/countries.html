@@ -30,7 +30,7 @@
   {% if country %}
     <h2>Number of Prisoners (2019): {{ country.stat }}</h2>
     <h2>{{country.year}} : {{country.prev}}</h2>
-    <canvas id="bar-chart"></canvas>
+    <canvas id="line-chart", width=800, height=700></canvas>
     <button id="refresh" type="button">Refresh</button>
     <script type="text/javascript">
       // line chart
@@ -57,7 +57,8 @@
       });
     </script>
   {% else %}
-    <canvas id="bar-chart" width="800" height="450"></canvas>
+  <canvas id="bar-chart"></canvas>
+  <button id="refresh" type="button">Refresh</button>
 
   {% endif %}
 {% endblock %}
