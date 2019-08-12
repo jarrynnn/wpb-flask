@@ -27,29 +27,21 @@
   <h1>{{ page }}</h1>
 
   {% if country %}
-    <h2>Number of Prisoners: {{ country.stat }}</h2>
-  {% else %}
-    <canvas id="bar-chart" width="800" height="450"></canvas>
+    <h2>Number of Prisoners (2019): {{ country.stat }}</h2>
+    <h2>{{country.year}} : {{country.prev}}</h2>
+    <canvas id="line-chart" width="800" height="450"></canvas>
     <script type="text/javascript">
-      // Bar chart
-      new Chart(document.getElementById("bar-chart"), {
-          type: 'bar',
+      // line chart
+      new Chart(document.getElementById("line-chart"), {
+          type: 'line',
           data: {
-            labels: [{% for c in country_list %}
-                      '{{c.label}}',
-                    {% endfor %}],
+            labels: ['2019', '{country.year}'],
             datasets: [
               {
-                label: "Population (prisoners)",
-                backgroundColor: [{% for c in country_list %}
-                                    '{{c.colour}}',
-                                  {% endfor %}],
-                hoverBackgroundColor: [{% for c in country_list %}
-                                    '{{c.colour}}',
-                                  {% endfor %}],
-                data: [{% for c in country_list %}
-                        '{{c.stat}}',
-                      {% endfor %}]
+                label: "Population over time (prisoners)",
+                //backgroundColor: ['{{country.colour}}'],
+                //hoverBackgroundColor: ['{{country.background}}'],
+                data: ['{{country.stat}}','{{country.prev}}']
               }
             ]
           },
@@ -61,6 +53,10 @@
             }
           }
       });
-  </script>
+    </script>
+  {% else %}
+    <canvas id="bar-chart" width="800" height="450"></canvas>
+
+    <script type="text/javascript" src="/static/js/main.js"></script>
   {% endif %}
 {% endblock %}
