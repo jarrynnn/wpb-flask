@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, jsonify
 from database import db_session, init_db
-from models import get_countries, get_country
+from models import get_countries, get_country, get_country_by_id
 
 import json
 
@@ -32,17 +32,16 @@ def home():
     )
 
 
-@app.route("/data")
-@app.route("/data/<country_name>")
-def data(country_name):
-    country = get_country(country_name)
+
+@app.route("/data/<country_id>")
+def data(country_id):
+    country = get_country_by_id(country_id)
     if country is None:
         data = [0, 0, 0]
-    elif (country.id == 1):
-        data = [1, 2, 3]
-    else:
-        data = [3, 2, 1]
+    else:    
+        data = [country.stat] * 3
     return jsonify(data=data)
+
 
 @app.route("/countries")
 @app.route("/countries/<country_name>")
@@ -51,6 +50,7 @@ def countries(country_name=None):
         'countries.html',
         country_list = [
             {
+                'key'       : c.id,
                 'label'     : c.name,
                 'stat'      : c.stat,
                 'colour'    : "#" + c.colour,
