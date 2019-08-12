@@ -12,19 +12,20 @@ $(function() {
 
 
 $('.refresh').click(function() {
-    alert('refreshed');
-
-    $.get("/data/" + $(this).text(), function(result) {
-        createChart(myChart, barChart, result.data);
+    alert('refreshed');        
+    $.get("/data/" + $(this).data('key'), function(result) {
+        myChart.destroy();  
+        myChart = createChart(barChart, result.data);
       });
     });
   
   });
     
-  function createChart(chart, canvas, data) {
+ 
 
-    if (chart) chart.destroy();
-    chart = new Chart(canvas, {
+function createChart(canvas, data) {  
+
+    return new Chart(canvas, {
       type: 'bar',
       data: {
         labels: ['UK', 'Ireland', 'France'],

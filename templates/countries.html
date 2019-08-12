@@ -58,10 +58,11 @@
     </script>
   {% else %}
   <canvas id="bar-chart"></canvas>
-  <button id="refresh" type="button">Refresh</button>
-  <button class="refresh" type="button">UK</button>
-  <button class="refresh" type="button">France</button>
-  <button class="refresh" type="button">Ireland</button>
+
+
+  {% for c in country_list %}
+  <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
+{% endfor %}
 
   {% endif %}
 {% endblock %}

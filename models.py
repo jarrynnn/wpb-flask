@@ -22,7 +22,12 @@ class Country(Base):
     def __repr__(self):
         return '%r (%s)' % (self.name, self.stat)
 
-def get_country(name=None):
+
+def get_country_by_id(id):
+    return Country.query.filter(Country.id == id).one_or_none()
+
+
+def get_country(name):
     return Country.query.filter(Country.name == name).one_or_none()
 
 def get_countries():
