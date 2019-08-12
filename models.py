@@ -23,7 +23,7 @@ class Country(Base):
         return '%r (%s)' % (self.name, self.stat)
 
 def get_country(name=None):
-    return Country.query.filter(Country.name == name).first()
+    return Country.query.filter(Country.name == name).one_or_none()
 
 def get_countries():
     return Country.query.all()
