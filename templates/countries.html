@@ -31,7 +31,7 @@
     <h2>Number of Prisoners (2019): {{ country.stat }}</h2>
     <h2>{{country.year}} : {{country.prev}}</h2>
     <canvas id="line-chart", width=800, height=700></canvas>
-    <button id="refresh" type="button">Refresh</button>
+    <button class="refresh" type="button" data-key="{{ country.key }}">{{ country.label }}</button>
     <script type="text/javascript">
       // line chart
       new Chart(document.getElementById("line-chart"), {
@@ -64,5 +64,5 @@
   <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
 {% endfor %}
 
-  {% endif %}
+{% endif %}
 {% endblock %}

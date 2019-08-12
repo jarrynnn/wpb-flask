@@ -1,24 +1,18 @@
         
 $(function() {
-  var barChart = $('#bar-chart');
+    var barChart = $('#bar-chart');
 
   
-  var myChart;
-  createChart(myChart, barChart, [0, 0, 0]);
-
-}); 
+    var myChart = createChart(barChart, [0, 0, 0]);
 
 
-
-
-$('.refresh').click(function() {
-    alert('refreshed');        
+    $('.refresh').click(function() {
+            
     $.get("/data/" + $(this).data('key'), function(result) {
         myChart.destroy();  
         myChart = createChart(barChart, result.data);
       });
     });
-  
   });
     
  
@@ -46,3 +40,11 @@ function createChart(canvas, data) {
       }
     });
   }
+
+  
+  $('#refresh').click(function() {
+            
+    $.get("/data/" + $(this).data('key'), function(result) {
+        myChart.destroy();  
+        myChart = createChart(barChart, result.data)}
+    
