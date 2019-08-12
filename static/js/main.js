@@ -8,7 +8,7 @@ $(function() {
         datasets: [
           {
             label: "Total prison population",
-            backgroundColor: [['#33ccdd', '#FFFF00'],
+            backgroundColor: ['#33ccdd', '#FFFF00'],
             data: [123, 28890]
           }
         ]
@@ -19,11 +19,15 @@ $(function() {
           display: true,
           text: 'Total prison population'
         }
-    },
+    }
+
 }); 
 
 
 
-  $('#refresh').click(function() {
+
+$('#refresh').click(function() {
     alert('refreshed');
-  });
+    });
+});
+
