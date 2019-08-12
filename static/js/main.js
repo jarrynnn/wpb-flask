@@ -11,10 +11,10 @@ $(function() {
 
 
 
-$('#refresh').click(function() {
+$('.refresh').click(function() {
     alert('refreshed');
 
-    $.get("/data", function(result) {
+    $.get("/data/" + $(this).text(), function(result) {
         createChart(myChart, barChart, result.data);
       });
     });
