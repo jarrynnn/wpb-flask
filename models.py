@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from database import Base
 
+<<<<<<< HEAD
 
 class Region(Base): 
     id = models.IntegerField(primary_key=True, unique = True)
@@ -11,6 +12,8 @@ class Region(Base):
     class Meta:
         ordering = ["name"] 
 
+=======
+>>>>>>> 9326935aa9b72b4c87da5ffc54bffaeef501c329
 class Country(Base):
     __tablename__ = 'countries'
     id = Column(Integer, primary_key=True)
