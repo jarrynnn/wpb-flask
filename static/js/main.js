@@ -39,12 +39,4 @@ function createChart(canvas, data) {
             }
       }
     });
-  }
-
-  
-  $('#refresh').click(function() {
-            
-    $.get("/data/" + $(this).data('key'), function(result) {
-        myChart.destroy();  
-        myChart = createChart(barChart, result.data)}
-    
+  } 

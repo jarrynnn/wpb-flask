@@ -31,8 +31,6 @@ def home():
         **default_context()
     )
 
-
-
 @app.route("/data/<country_id>")
 def data(country_id):
     country = get_country_by_id(country_id)
