@@ -28,8 +28,12 @@
   <h1>{{ page }}</h1>
 
   {% if country %}
-    <h2>Number of Prisoners (2019): {{ country.stat }}</h2>
-    <h2>{{country.year}} : {{country.prev}}</h2>
+    {% for c in country_datas_list %}
+      {{ menu_item(c.metric) }}
+
+    <h2>Number of Prisoners {{c.year}}: {{ c.value }}</h2>
+    <h2>Region : {{country.region}} </h2>
+    {% endfor %}
     <canvas id="line-chart", width=800, height=700></canvas>
     <button class="refresh" type="button" data-key="{{ country.key }}">{{ country.label }}</button>
     <script type="text/javascript">
@@ -37,13 +41,12 @@
       new Chart(document.getElementById("line-chart"), {
           type: 'line',
           data: {
-            labels: ['2019', '{country.year}'],
+            labels: ['2019', '2018'],
             datasets: [
               {
                 label: "Population over time (prisoners)",
-                //backgroundColor: ['{{country.colour}}'],
-                //hoverBackgroundColor: ['{{country.background}}'],
-                data: ['{{country.stat}}','{{country.prev}}']
+                backgroundColor: ['{{country.colour}}'],
+                data: [0,10]
               }
             ]
           },

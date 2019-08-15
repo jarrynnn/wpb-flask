@@ -62,12 +62,15 @@ class SimilarCountriesRef(Base):
     country4_id = Column(Integer, nullable=False)
 
 
-def get_country_by_id(id):
-    return Country.query.filter(Country.id == id).one_or_none()
+def get_countrydatas_by_country_id(id):
+    return CountryData.query.filter(CountryData.countryref_id == id).one_or_none()
 
+
+def get_countrydatas():
+    return CountryData.query.all()
 
 def get_country(name):
-    return Country.query.filter(Country.name == name).one_or_none()
+    return CountryRef.query.filter(CountryRef.name == name).one_or_none()
 
 def get_countries():
-    return Country.query.all()
+    return CountryRef.query.all()
