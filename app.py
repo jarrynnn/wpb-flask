@@ -33,11 +33,12 @@ def home():
 
 @app.route("/data/<countryref_id>")
 def data(countryref_id):
-    country = get_countrydatas_by_country_id(countryref_id)
+    country = get_country_by_id()
+    country_datas = get_countrydatas_by_country_id(countryref_id)
     if country is None:
         data = [0, 0, 0]
     else:    
-        data = [country.value] * 3 #change to 'for countrydata in countrydatalist...
+        data =[20] * 3 #change to 'for countrydata in countrydatalist...
     return jsonify(data=data)
 
 
@@ -67,7 +68,7 @@ def countries(country_name=None):
             'region'    : c.country_region,
             'year'      : c.year,
             'value'    : c.value,
-        } for c in get_countrydatas_by_country_id(country)
+        } for c in get_countrydatas_by_country_id(country.id)
         ] if country_name is not None else get_countrydatas(),
 
         page = 'All Countries' if country_name is None else country_name,
