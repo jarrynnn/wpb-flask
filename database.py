@@ -1,11 +1,12 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.orm import scoped_session, sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 engine = create_engine('sqlite:///database.db', convert_unicode=True)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
+
 Base = declarative_base()
 Base.query = db_session.query_property()
 
@@ -18,9 +19,31 @@ def init_db(create_test_data=False):
     if (create_test_data):
         from database import db_session
 
-        db_session.add(models.Country(name='UK', stat=100, colour="3e95cd", background="3e7dcd", prev =95, year = 2018))
-        db_session.add(models.Country(name='China', stat=17, colour="8e5ea2", background="3e7dcd",prev =30, year = 2018))
-        db_session.add(models.Country(name='USA', stat=198, colour="3cba9f", background="3e7dcd", prev =200, year = 2018))
-        db_session.add(models.Country(name='France', stat=200, colour="cd3e95", background="3e7dcd", prev =95, year = 2018))
+        eu= models.Region(name='Europe')
+        na =models.Region(name='North America')
+
+        db_session.add(eu)
+        db_session.add(na)
+        
+        uk= models.CountryRef(region=eu, name='UK', colour="3e95cd")
+        fr= models.CountryRef(region=eu, name='France', colour="8e5ea2")
+        us= models.CountryRef(region=na, name='USA', colour="3cba9f")
+
+        db_session.add(uk)
+        db_session.add(fr)
+        db_session.add(us)
+
+        tpp= models.Metric(name='Total prison population', trends_switch=True)
+        ppr= models.Metric(name='Prison population rate', trends_switch=True)
+        db_session.add(tpp)
+        db_session.add(ppr)
+
+        db_session.add(models.CountryData(country=uk, metric=tpp, year = 2018, value=2000 ))
+        db_session.add(models.CountryData(country=fr, metric=tpp, year = 2018, value=3000 ))
+        db_session.add(models.CountryData(country=us, metric=tpp, year = 2018, value=40000 ))
+        db_session.add(models.CountryData(country=uk, metric=tpp, year = 2017, value=2200))
+        db_session.add(models.CountryData(country=uk, metric=ppr, year = 2017, value=200))
+        db_session.add(models.CountryData(country=uk, metric=ppr, year = 2018, value=150))
+        db_session.add(models.CountryData(country=fr, metric=ppr, year = 2018, value=180))
 
         db_session.commit()
