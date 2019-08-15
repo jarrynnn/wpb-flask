@@ -58,14 +58,13 @@ def countries(country_name=None):
                 'url'       : url_for('countries', country_name=c.name)
             } for c in get_countries()
         ],
-
-        #can put countrydatas in here too?
         country = get_country(country_name), 
         country_datas_list = [            
             {
             'key'       : c.id,
-            'label'     : c.metric,
-            'country' : c.country,
+            'country'   : c.country,
+            'metric'     :c.metric,
+            'region'    : c.country_region,
             'year'      : c.year,
             'value'    : c.value,
         } for c in get_countrydatas_by_country_id(country)

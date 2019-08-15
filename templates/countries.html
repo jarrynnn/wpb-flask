@@ -32,7 +32,7 @@
       {{ menu_item(c.metric) }}
 
     <h2>Number of Prisoners {{c.year}}: {{ c.value }}</h2>
-    <h2>Region : {{country.region}} </h2>
+    <h2>Region : {{c.region}} </h2>
     {% endfor %}
     <canvas id="line-chart", width=800, height=700></canvas>
     <button class="refresh" type="button" data-key="{{ country.key }}">{{ country.label }}</button>
@@ -60,9 +60,15 @@
       });
     </script>
   {% else %}
+  <h2> country var : {{country}}</h2>
   <canvas id="bar-chart"></canvas>
 
+  {% for c in country_datas_list %}
+      {{ menu_item(c.metric.name) }}
 
+    <h2>Country : {{c.country.name}}  Number of Prisoners {{c.year}}: {{ c.value }}</h2>
+    <h2>Region : {{c.country.region.name}} </h2>
+    {% endfor %}
   {% for c in country_list %}
   <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
 {% endfor %}
