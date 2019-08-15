@@ -18,6 +18,11 @@ $(function() {
  
 
 function createChart(canvas, data) {  
+  
+  $.each(data.data, function(i, item) {
+      alert(item.value); 
+  });
+
 
     return new Chart(canvas, {
       type: 'bar',
@@ -27,7 +32,7 @@ function createChart(canvas, data) {
           {
             label: "Total prison population",
             backgroundColor: ['#000000', '#FFFF00', '#009900'],
-            data: data
+            data: data['value']
           }
         ]
       },
