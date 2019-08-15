@@ -48,7 +48,7 @@ class CountryData(Base):
 
  
     def __repr__(self):
-        return '%r (%s)' % (self.name, self.stat)
+        return '%r %r (%s)' % (self.country, self.metric, self.year)
 
 class SimilarCountriesRef(Base):
     __tablename__ = 'similar_countries'
@@ -69,7 +69,7 @@ def get_countrydatas_by_country_id(id):
 def get_countrydatas():
     return CountryData.query.all()
 
-def get_country_by_id(countryref_id):
+def get_country_by_id(id):
     return CountryRef.query.filter(CountryRef.id == id).one_or_none()
 
 
