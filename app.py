@@ -36,9 +36,24 @@ def data(countryref_id=None):
     country = get_country_by_id(countryref_id)
     country_datas = get_countrydatas_by_country_id(countryref_id)
     if country is None:
-        data = [0, 0, 0]
-    else:    
-        data =[20] * 3 #change to 'for countrydata in countrydatalist...
+        data = [
+            {   'year' : c.year,
+                'value' : c.value,
+            } for c in get_countrydatas_by_country_id(country.id)
+        ]
+
+    else:  
+        data  = [
+            {   
+                'key'       : c.id,
+                'country'   : c.country.name,
+                'metric'     :c.metric.name,
+                'region'    : c.country.region.name,
+                'year'      : c.year,
+                'value'    : c.value,
+            } for c in get_countrydatas()
+        ]
+
     return jsonify(data=data)
 
 
@@ -65,7 +80,7 @@ def countries(country_name=None):
             'key'       : c.id,
             'country'   : c.country,
             'metric'     :c.metric,
-            'region'    : c.country_region,
+            'region'    : c.country.region,
             'year'      : c.year,
             'value'    : c.value,
         } for c in get_countrydatas_by_country_id(country.id)
