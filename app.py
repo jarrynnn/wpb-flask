@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, jsonify
 from database import db_session, init_db
-from models import get_countries, get_country, get_countrydatas, get_countrydatas_by_country_id, get_country_by_id
+from models import get_countries, get_country, get_countrydatas, get_countrydatas_by_country_id, get_country_by_id, get_metrics, get_metric_by_id
 
 import json
 
@@ -34,23 +34,14 @@ def home():
 @app.route("/data/<countryref_id>")
 def data(countryref_id=None):
     country = get_country_by_id(countryref_id)
-    country_datas = get_countrydatas_by_country_id(countryref_id)
-    if country is None:
-        data = [
-            {   'year' : c.year,
-                'value' : c.value,
-            } for c in get_countrydatas_by_country_id(country.id)
-        ]
-
-    else:  
-        key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
-        value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
-        year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
-        countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id)] 
-        countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id)] 
-        metric = [c.metric.name for c in get_countrydatas_by_country_id(country.id)] 
-        region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id)] 
-        data  = {   
+    key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
+    value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
+    year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
+    countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id)] 
+    countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id)] 
+    metric = [c.metric.name for c in get_countrydatas_by_country_id(country.id)] 
+    region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id)] 
+    data  = {   
                 'key'       : key,
                 'countryname'   : countryname,
                 'countrycolour'   : countrycolour,
@@ -58,8 +49,31 @@ def data(countryref_id=None):
                 'region'    : region,
                 'year'      : year,
                 'value'    : value,
-            } 
-        
+            }        
+
+    return jsonify(data=data)
+
+@app.route("/data/<countryref_id>/<metric_id>")
+def metricdata(countryref_id=None, metric_id=None):
+    country = get_country_by_id(countryref_id)
+    metric = get_metric_by_id(metric_id)
+
+    key = [c.id for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    value = [c.value for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    year = [c.year for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    metricname = [c.metric.name for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+    data  = {   
+                'key'       : key,
+                'countryname'   : countryname,
+                'countrycolour'   : countrycolour,
+                'metric'     :metricname,
+                'region'    : region,
+                'year'      : year,
+                'value'    : value,
+            }        
 
     return jsonify(data=data)
 
@@ -69,6 +83,13 @@ def data(countryref_id=None):
 def countries(country_name=None):
     return render_template(
         'countries.html',
+        metric_list = [
+            {
+                'key'       : m.id,
+                'label'     : m.name,
+                'trends_switch' : m.trends_switch,
+            } for m in get_metrics()
+        ],
         country_list = [
             {
                 'key'       : c.id,

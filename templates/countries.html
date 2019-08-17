@@ -75,9 +75,13 @@
     <h2>Region : {{c.country.region.name}} </h2>
   {% endfor %}
 
-  {% for c in country_list %}
-   <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
+  {% for m in metric_list %}
+   <button class="refresh" type="button" data-key="{{ m.key }}">{{ m.label }}</button>
   {% endfor %}
+
+  {% for c in country_list %}
+  <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
+ {% endfor %}
 
 {% endif %}
 {% endblock %}

@@ -13,6 +13,14 @@ $(function() {
         myChart = createChart(barChart, result.data);
       });
     });
+
+    $('.refreshmetric').click(function() {
+            
+    $.get("/metricdata/1/" + $(this).data('key'), function(result) {
+          myChart.destroy();  
+          myChart = createChart(barChart, result.data);
+        });
+    });
   });
     
  
@@ -42,3 +50,4 @@ function createChart(canvas, data) {
       }
     });
   } 
+
