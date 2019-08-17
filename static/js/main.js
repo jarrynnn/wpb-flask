@@ -28,7 +28,7 @@ function createChart(canvas, data) {
           {
             label: data["metric"],
             //change this so it just shows one? Showing undefinded?
-            backgroundColor: ['#000000', '#FFFF00', '#009900'],
+            backgroundColor: data["countrycolour"],
             data: data["value"]
           }
         ]
