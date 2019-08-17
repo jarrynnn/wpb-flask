@@ -31,6 +31,7 @@ class Metric(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(100), unique=True)
     trends_switch = Column(Boolean, default=False)
+    #sum_or_ave_switch = Column(Boolean, default=False)
     country_datas = relationship("CountryData", back_populates="metric")
     
 

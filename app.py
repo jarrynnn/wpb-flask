@@ -33,6 +33,20 @@ def home():
 
 @app.route("/data/<countryref_id>")
 def data(countryref_id=None):
+    #add in clause for when there are no countries selected (want 'world' data) or when there is more than one country selected 
+    # (sum of values)
+    # - how to pass?
+
+    #if countryref_id is None: 
+        
+    #key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
+    #value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
+    #year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
+    #countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id)] 
+    ##countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id)] 
+    #metric = [c.metric.name for c in get_countrydatas_by_country_id(country.id)] 
+    #region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id)] 
+    #else:
     country = get_country_by_id(countryref_id)
     key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
     value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
