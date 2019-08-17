@@ -46,11 +46,14 @@ def data(countryref_id=None):
         key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
         value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
         year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
+        countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id)] 
+        metric = [c.metric.name for c in get_countrydatas_by_country_id(country.id)] 
+        region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id)] 
         data  = {   
                 'key'       : key,
-                #'country'   : c.country.name,
-                #'metric'     :c.metric.name,
-                #'region'    : c.country.region.name,
+                'countryname'   : countryname,
+                'metric'     :metric,
+                'region'    : region,
                 'year'      : year,
                 'value'    : value,
             } 

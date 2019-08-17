@@ -20,14 +20,16 @@ $(function() {
 function createChart(canvas, data) {  
   
     return new Chart(canvas, {
+      
       type: 'bar',
       data: {
-        labels: ['UK', 'Ireland', 'France'],
+        labels: data["countryname"],
         datasets: [
           {
-            label: "Total prison population",
+            label: data["metric"],
+            //change this so it just shows one? Showing undefinded?
             backgroundColor: ['#000000', '#FFFF00', '#009900'],
-            data: data['value']
+            data: data["value"]
           }
         ]
       },
