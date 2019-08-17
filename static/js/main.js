@@ -19,11 +19,6 @@ $(function() {
 
 function createChart(canvas, data) {  
   
-  $.each(data.data, function(i, item) {
-      alert(item.value); 
-  });
-
-
     return new Chart(canvas, {
       type: 'bar',
       data: {

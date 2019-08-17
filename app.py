@@ -43,16 +43,18 @@ def data(countryref_id=None):
         ]
 
     else:  
-        data  = [
-            {   
-                'key'       : c.id,
-                'country'   : c.country.name,
-                'metric'     :c.metric.name,
-                'region'    : c.country.region.name,
-                'year'      : c.year,
-                'value'    : c.value,
-            } for c in get_countrydatas()
-        ]
+        key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
+        value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
+        year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
+        data  = {   
+                'key'       : key,
+                #'country'   : c.country.name,
+                #'metric'     :c.metric.name,
+                #'region'    : c.country.region.name,
+                'year'      : year,
+                'value'    : value,
+            } 
+        
 
     return jsonify(data=data)
 
