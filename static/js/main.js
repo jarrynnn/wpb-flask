@@ -16,7 +16,7 @@ $(function() {
 
     $('.refreshmetric').click(function() {
             
-    $.get("/metricdata/1/" + $(this).data('key'), function(result) {
+    $.get("/data/1/" + $(this).data('key'), function(result) {
           myChart.destroy();  
           myChart = createChart(barChart, result.data);
         });
