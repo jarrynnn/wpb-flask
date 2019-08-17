@@ -1,6 +1,23 @@
 /* GLOBAL */
+
 body {
-  font: 1em Calibri, Sans-Serif;
+
+  font-family: 'Source Sans Pro', sans-serif;
+
+  font-size: 14px;
+
+}
+
+
+
+header {
+
+  border-bottom: 1px solid #999;
+
+  margin-bottom: 2rem;
+
+  display: flex;
+
 }
 
 a {
@@ -57,3 +74,20 @@ div.menu span.menu-item a.today {
 div.menu span.menu-item a.today:hover {
   color: #CC3300;
 }
+
+.nav-left {
+  
+  margin-right: auto;
+
+}
+
+
+
+.nav-right {
+
+  display: flex;
+
+  padding-top: 2rem;
+
+}
+

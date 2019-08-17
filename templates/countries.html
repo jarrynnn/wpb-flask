@@ -22,8 +22,18 @@
   {% for c in country_list %}
     {{ menu_item(c.label, c.url) }}
   {% endfor %}
-  <h2> country var : {{country}}</h2>
-  <h2> country_name var : {{country_name}}</h2>
+
+  <select id='multipleSelect' multiple='multiple'>
+      {% for x in country_list %}
+        <option value="{{ x.label }}">{{ x.label }}</option>
+      {% endfor %}
+  </select>
+  <script type='text/javascript'>
+      $('#multipleSelect').val(['1', '2']);
+  </script>
+
+
+  
 {% endblock %}
 
 {% block content %}
