@@ -75,19 +75,4 @@ div.menu span.menu-item a.today:hover {
   color: #CC3300;
 }
 
-.nav-left {
-  
-  margin-right: auto;
-
-}
-
-
-
-.nav-right {
-
-  display: flex;
-
-  padding-top: 2rem;
-
-}
 

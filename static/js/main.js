@@ -48,8 +48,15 @@ function createChart(canvas, data) {
         title: { 
           display: true,
             text: 'Total prison population'
-            }
+            },
+        scales: {
+            yAxes: [{
+              display: true,
+              ticks: {
+                suggestedMin: 0,
+              }
+            }]
+        }
       }
     });
   } 
-
