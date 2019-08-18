@@ -39,41 +39,6 @@
 {% block content %}
   <h1>{{ page }}</h1>
 
-  {% if country %}
-    {% for c in country_datas_list %}
-      {{ menu_item(c.metric) }}
-
-    <h2>Number of Prisoners {{c.year}}: {{ c.value }}</h2>
-    <h2>Region : {{c.region}} </h2>
-    {% endfor %}
-    <canvas id="line-chart", width=800, height=700></canvas>
-    <button class="refresh" type="button" data-key="{{ country.key }}">{{ country.label }}</button>
-    <script type="text/javascript">
-      // line chart
-      new Chart(document.getElementById("line-chart"), {
-          type: 'line',
-          data: {
-            labels: ['2019', '2018'],
-            datasets: [
-              {
-                label: "Population over time (prisoners)",
-                backgroundColor: ['{{country.colour}}'],
-                data: [0,10]
-              }
-            ]
-          },
-          options: {
-            legend: { display: false },
-            title: {
-              display: true,
-              text: 'Population (prisoners)'
-            }
-          }
-      });
-    </script>
-  
-  
-  {% else %}
 
 
     <canvas id="bar-chart"></canvas>
@@ -93,5 +58,75 @@
   <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
  {% endfor %}
 
-{% endif %}
+
+
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_worldLow;
+
+// Set projection
+chart.projection = new am4maps.projections.NaturalEarth1();
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+polygonSeries.mapPolygons.template.strokeWidth = 0.5;
+
+// Exclude Antartica
+polygonSeries.exclude = ["AQ"];
+
+// Make map load polygon (like country names) data from GeoJSON
+polygonSeries.useGeodata = true;
+
+// Configure series
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+polygonTemplate.fill = chart.colors.getIndex(0);
+
+// Create hover state and set alternative fill color
+var hs = polygonTemplate.states.create("hover");
+hs.properties.fill = chart.colors.getIndex(2);
+
+// Create active state
+var activeState = polygonTemplate.states.create("active");
+activeState.properties.fill = chart.colors.getIndex(4);
+
+// Create an event to toggle "active" state
+polygonTemplate.events.on("hit", function(ev) {
+  ev.target.isActive = !ev.target.isActive;
+  alert(ev.target.dataItem.dataContext.id)
+})
+
+chart.events.on("hit", function(ev) {
+  
+  
+})
+
+
+
+var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>
+
+
 {% endblock %}

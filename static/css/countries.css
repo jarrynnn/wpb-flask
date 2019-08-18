@@ -4,6 +4,13 @@
 } 
 /* copied from https://github.com/wsvincent/djangoforbeginners/blob/master/ch5-blog-app/static/css/base.css */
 
+<style>
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+</style>
+
 body {
 
     font-family: 'Source Sans Pro', sans-serif;

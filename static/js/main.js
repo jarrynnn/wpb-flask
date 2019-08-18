@@ -4,7 +4,7 @@ $(function() {
 
   
     var myChart = createChart(barChart, [0, 0, 0]);
-
+    var selectedCountries = []
 
     $('.refresh').click(function() {
             
@@ -23,6 +23,18 @@ $(function() {
           myChart = createChart(barChart, result.data);
         });
     });
+
+    // Onclick event to retrieve all active countries
+    $('.chartdiv').click(function() {
+          
+    $.get($(this).data('key'), function(result) {
+        selectedCountries.destroy();  
+        selectedCountries = event.target.dataItem.dataContext.id;
+        alert(selectedCountries);
+
+        });
+    });
+
   });
     
  
@@ -60,3 +72,9 @@ function createChart(canvas, data) {
       }
     });
   } 
+
+
+
+
+
+
