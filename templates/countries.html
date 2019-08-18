@@ -86,6 +86,8 @@ chart.projection = new am4maps.projections.NaturalEarth1();
 
 // Create map polygon series
 var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+//add data onto polygonseries
+polygonSeries 
 polygonSeries.mapPolygons.template.strokeWidth = 0.5;
 
 // Exclude Antartica
@@ -97,6 +99,7 @@ polygonSeries.useGeodata = true;
 // Configure series
 var polygonTemplate = polygonSeries.mapPolygons.template;
 polygonTemplate.tooltipText = "{name}";
+
 polygonTemplate.fill = chart.colors.getIndex(0);
 
 // Create hover state and set alternative fill color
@@ -107,15 +110,18 @@ hs.properties.fill = chart.colors.getIndex(2);
 var activeState = polygonTemplate.states.create("active");
 activeState.properties.fill = chart.colors.getIndex(4);
 
+var selectedItems = [];
+
 // Create an event to toggle "active" state
 polygonTemplate.events.on("hit", function(ev) {
   ev.target.isActive = !ev.target.isActive;
   alert(ev.target.dataItem.dataContext.id)
+  
 })
 
 chart.events.on("hit", function(ev) {
   
-  
+  alert(polygonSeries)
 })
 
 
