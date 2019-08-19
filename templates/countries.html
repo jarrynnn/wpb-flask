@@ -13,34 +13,49 @@
 
   <link rel="stylesheet" href="/static/css/countries.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-  <script type="text/javascript" src="/static/js/main.js"></script>
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+
   <script src="https://www.amcharts.com/lib/4/core.js"></script>
   <script src="https://www.amcharts.com/lib/4/maps.js"></script>
   <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
   <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <script type="text/javascript" src="/static/js/main.js"></script>
 {% endblock %}
 
 {# Layout Menu #}
 {% block menu %}
   {{ menu_item('All Countries', countries_url) }}
 
-     
-  <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+ 
+{% endblock %}
+
+{% block content %}
+
+
+  <h1>{{ page }}</h1>
+
+  <label for="multiselect-countries">
+      Start typing the name of the country or countries you would like to view:
+  </label>
+
+  <select class="js-countries-multiple" id="multiselect-countries" name="countries[]" multiple="multiple" style="width: 100%">
+    
       {% for x in country_list %}
             <option value="{{ x.label }}">{{ x.label }}</option>
       {% endfor %}
   </select>
 
-
-  
-{% endblock %}
-
-{% block content %}
-  <h1>{{ page }}</h1>
-
-
+<!--multi-select box for countries script-->
+  <script>
+  $(document).ready(
+      function () {
+          $('.js-countries-multiple').select2({ placeholder: 'Select Country(s)'});
+      }
+  );
+  </script>
 
     <canvas id="bar-chart"></canvas>
 

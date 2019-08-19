@@ -1,10 +1,4 @@
         
-
-//multi-select box for countries
-$(document).ready(function() {
-  $('.js-example-basic-multiple').select2();
-});
-
 //barchart
 $(function() {
 
@@ -44,6 +38,8 @@ $(function() {
 
   });
     
+
+
  
 
 function createChart(canvas, data) {  
