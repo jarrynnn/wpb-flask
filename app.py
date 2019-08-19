@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, jsonify
+from flask import Flask, render_template, url_for, jsonify, request
 from database import db_session, init_db
 from models import get_countries, get_country, get_countrydatas, get_countrydatas_by_country_id, get_country_by_id, get_metrics, get_metric_by_id
 
