@@ -21,7 +21,7 @@ $(function() {
 
     $('.refreshmetric').click(function() {
             
-    $.get("/data/1/" + $(this).data('key'), function(result) {
+    $.get("/data/" + $(".js-countries-multiple").val() + "/" + $(this).data('key'), function(result) {
     //need to work out how to pass through the selected countries here (fixed at UK)
 
           myChart.destroy();  

@@ -64,27 +64,40 @@ def data(countryref_ids=None):
 
     return jsonify(data = data)
 
-@app.route("/data/<countryref_id>/<metric_id>")
-def metricdata(countryref_id=None, metric_id=None):
-    country = get_country_by_id(countryref_id)
-    metric = get_metric_by_id(metric_id)
+@app.route("/data/<countryref_ids>/<metric_id>")
+def metricdata(countryref_ids=None, metric_id=1):
+    country_list = countryref_ids.split(',')
+    sel_metric = get_metric_by_id(metric_id)
+    if not sel_metric.trends_switch:
+        year = 2019         #change this to pick up from today's date!
 
-    key = [c.id for c in get_countrydatas_by_country_id(country.id, metric.id)] 
-    value = [c.value for c in get_countrydatas_by_country_id(country.id, metric.id)] 
-    year = [c.year for c in get_countrydatas_by_country_id(country.id, metric.id)] 
-    countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id, metric.id)] 
-    countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id, metric.id)] 
-    metricname = [c.metric.name for c in get_countrydatas_by_country_id(country.id, metric.id)] 
-    region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id, metric.id)] 
+
+    key = []
+    countryname = []
+    countrycolour= []
+    metric= []
+    region= []
+    year= []
+    value= []
+    
+    for country in country_list:
+        key += ([c.id for c in get_countrydatas_by_country_id(country, sel_metric.id, year)])
+        value += ([c.value for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+        year += ([c.year for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+        countryname += ([c.country.name for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+        countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+        metric += ([c.metric.name for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+        region += ([c.country.region.name for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+
     data  = {   
                 'key'       : key,
                 'countryname'   : countryname,
                 'countrycolour'   : countrycolour,
-                'metric'     :metricname,
+                'metric'     :metric,
                 'region'    : region,
                 'year'      : year,
                 'value'    : value,
-            }        
+            }       
 
     return jsonify(data=data)
 
