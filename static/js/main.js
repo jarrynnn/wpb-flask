@@ -18,6 +18,7 @@ $(function() {
       });
     })
 
+
     $('.refreshmetric').click(function() {
             
     $.get("/data/1/" + $(this).data('key'), function(result) {

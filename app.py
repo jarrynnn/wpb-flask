@@ -31,45 +31,27 @@ def home():
         **default_context()
     )
 
-#@app.route('/data/', methods=['POST'])
-#def get_data():
- #   ids = request.form.getlist('countryref_ids', type=int)
-  #  users = []
 
-   # for id in ids:
-    #    try:
-     #       user = whatever_user_method(id)
-      #      users.append(user)
-       # except:
-        #    continue
+@app.route("/data/<countryref_ids>")
+def data(countryref_ids=None):
 
-    #returns users
+    country_list = countryref_ids.split(',')
+    key = []
+    countryname = []
+    countrycolour= []
+    metric= []
+    region= []
+    year= []
+    value= []
+    for country in country_list:
+        key += ([c.id for c in get_countrydatas_by_country_id(country)])
+        value += ([c.value for c in get_countrydatas_by_country_id(country)])
+        year += ([c.year for c in get_countrydatas_by_country_id(country)])
+        countryname += ([c.country.name for c in get_countrydatas_by_country_id(country)])
+        countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country)])
+        metric += ([c.metric.name for c in get_countrydatas_by_country_id(country)])
+        region += ([c.country.region.name for c in get_countrydatas_by_country_id(country)])
 
-
-@app.route("/data/<countryref_id>")
-def data(countryref_id=None):
-    #add in clause for when there are no countries selected (want 'world' data) or when there is more than one country selected 
-    # (sum of values)
-    # - how to pass?
-
-    #if countryref_id is None: 
-        
-    #key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
-    #value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
-    #year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
-    #countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id)] 
-    ##countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id)] 
-    #metric = [c.metric.name for c in get_countrydatas_by_country_id(country.id)] 
-    #region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id)] 
-    #else:
-    country = get_country_by_id(countryref_id)
-    key = [c.id for c in get_countrydatas_by_country_id(country.id)] 
-    value = [c.value for c in get_countrydatas_by_country_id(country.id)] 
-    year = [c.year for c in get_countrydatas_by_country_id(country.id)] 
-    countryname = [c.country.name for c in get_countrydatas_by_country_id(country.id)] 
-    countrycolour = ["#"+c.country.colour for c in get_countrydatas_by_country_id(country.id)] 
-    metric = [c.metric.name for c in get_countrydatas_by_country_id(country.id)] 
-    region = [c.country.region.name for c in get_countrydatas_by_country_id(country.id)] 
     data  = {   
                 'key'       : key,
                 'countryname'   : countryname,
@@ -78,9 +60,9 @@ def data(countryref_id=None):
                 'region'    : region,
                 'year'      : year,
                 'value'    : value,
-            }        
+            }  
 
-    return jsonify(data=data)
+    return jsonify(data = data)
 
 @app.route("/data/<countryref_id>/<metric_id>")
 def metricdata(countryref_id=None, metric_id=None):
