@@ -31,19 +31,19 @@ def home():
         **default_context()
     )
 
-@app.route('/data/', methods=['POST'])
-def get_data():
-    ids = request.form.getlist('countryref_ids', type=int)
-    users = []
+#@app.route('/data/', methods=['POST'])
+#def get_data():
+ #   ids = request.form.getlist('countryref_ids', type=int)
+  #  users = []
 
-    for id in ids:
-        try:
-            user = whatever_user_method(id)
-            users.append(user)
-        except:
-            continue
+   # for id in ids:
+    #    try:
+     #       user = whatever_user_method(id)
+      #      users.append(user)
+       # except:
+        #    continue
 
-    returns users
+    #returns users
 
 
 @app.route("/data/<countryref_id>")

@@ -1,8 +1,15 @@
         
-$(function() {
-    var barChart = $('#bar-chart');
 
-  
+//multi-select box for countries
+$(document).ready(function() {
+  $('.js-example-basic-multiple').select2();
+});
+
+//barchart
+$(function() {
+
+    var barChart = $('#bar-chart');
+ 
     var myChart = createChart(barChart, [0, 0, 0]);
     var selectedCountries = []
 

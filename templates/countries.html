@@ -14,23 +14,24 @@
   <link rel="stylesheet" href="/static/css/countries.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
   <script type="text/javascript" src="/static/js/main.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 {% endblock %}
 
 {# Layout Menu #}
 {% block menu %}
   {{ menu_item('All Countries', countries_url) }}
-  {% for c in country_list %}
-    {{ menu_item(c.label, c.url) }}
-  {% endfor %}
 
-  <select id='multipleSelect' multiple='multiple'>
+     
+  <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
       {% for x in country_list %}
-        <option value="{{ x.label }}">{{ x.label }}</option>
+            <option value="{{ x.label }}">{{ x.label }}</option>
       {% endfor %}
   </select>
-  <script type='text/javascript'>
-      $('#multipleSelect').val(['1', '2']);
-  </script>
 
 
   
@@ -59,21 +60,9 @@
  {% endfor %}
 
 
- /**
- * ---------------------------------------
- * This map is created using amCharts 4.
- * Example code from this website was used and repurposed:
- * https://www.amcharts.com/
- * ---------------------------------------
- */
-
-<!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/maps.js"></script>
-<script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-
+ <!--* This map is created using amCharts 4 * Example code from this website was used and repurposed:
+ * https://www.amcharts.com/-->
+ 
 <!-- Chart code -->
 <script>
     am4core.ready(function() {
@@ -114,7 +103,7 @@ polygonSeries.heatRules.push({
   "property": "fill",
   "target": polygonSeries.mapPolygons.template,
   "min": am4core.color("#BBBBBB"),
-  "max": am4core.color("#AAAA00")
+  "max": am4core.color("#AAAAAA")
 });
 
 // Configure series
@@ -155,7 +144,8 @@ var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
 setState("GB", true);
 setState("US", true);
 setState("US", false);
-}); // end am4core.ready()
+}); 
+// end am4core.ready()
 
 </script>
 
