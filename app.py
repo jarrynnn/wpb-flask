@@ -68,9 +68,11 @@ def data(countryref_ids=None):
 def metricdata(countryref_ids=None, metric_id=1):
     country_list = countryref_ids.split(',')
     sel_metric = get_metric_by_id(metric_id)
-    if not sel_metric.trends_switch:
-        year = 2019         #change this to pick up from today's date!
-
+    if not sel_metric.trends_switch: #if there are no trends data, just look for current year, otherwise bring back all years
+        current_year = 2018         #change this to pick up from today's date!
+    else: 
+        current_year = None
+    
 
     key = []
     countryname = []
@@ -81,13 +83,13 @@ def metricdata(countryref_ids=None, metric_id=1):
     value= []
     
     for country in country_list:
-        key += ([c.id for c in get_countrydatas_by_country_id(country, sel_metric.id, year)])
-        value += ([c.value for c in get_countrydatas_by_country_id(country, sel_metric.id)])
-        year += ([c.year for c in get_countrydatas_by_country_id(country, sel_metric.id)])
-        countryname += ([c.country.name for c in get_countrydatas_by_country_id(country, sel_metric.id)])
-        countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country, sel_metric.id)])
-        metric += ([c.metric.name for c in get_countrydatas_by_country_id(country, sel_metric.id)])
-        region += ([c.country.region.name for c in get_countrydatas_by_country_id(country, sel_metric.id)])
+        key += ([c.id for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+        value += ([c.value for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+        year += ([c.year for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+        countryname += ([c.country.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+        countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+        metric += ([c.metric.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+        region += ([c.country.region.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
 
     data  = {   
                 'key'       : key,

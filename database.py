@@ -33,8 +33,9 @@ def init_db(create_test_data=False):
         db_session.add(fr)
         db_session.add(us)
 
-        tpp= models.Metric(name='Total prison population', trends_switch=True)
-        ppr= models.Metric(name='Prison population rate', trends_switch=True)
+        tpp= models.Metric(name='Total prison population', trends_switch=True, sum_or_ave_switch = True)
+        ppr= models.Metric(name='Prison population rate', trends_switch=True, sum_or_ave_switch = False)
+        fem = models.Metric(name='Female prisoner %', trends_switch=False, sum_or_ave_switch = False)
         db_session.add(tpp)
         db_session.add(ppr)
 
@@ -45,5 +46,7 @@ def init_db(create_test_data=False):
         db_session.add(models.CountryData(country=uk, metric=ppr, year = 2017, value=200))
         db_session.add(models.CountryData(country=uk, metric=ppr, year = 2018, value=150))
         db_session.add(models.CountryData(country=fr, metric=ppr, year = 2018, value=180))
+        db_session.add(models.CountryData(country=uk, metric=fem, year = 2018, value=18))
+        db_session.add(models.CountryData(country=uk, metric=fem, year = 2017, value=18))
 
         db_session.commit()
