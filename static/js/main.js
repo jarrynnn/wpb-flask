@@ -9,28 +9,14 @@ $(function() {
 
 
     $(".js-countries-multiple").on("select2:select select2:unselect", function (e) {
+      //this returns all the selected items
+    var items= $(this).val(); 
 
-      //this returns all the selected item
-      var items= $(this).val();       
-  
-      //Gets the last selected item
-      var lastSelectedItem = e.params.data.id;
-
-      $.get("/data/" + items('key'), function(result) {
+    $.get("/data/" + items, function(result) {
         myChart.destroy();  
         myChart = createChart(barChart, result.data);
       });
-  
-  })
-
-
-    $('.refresh').click(function() {
-            
-    $.get("/data/" + $(this).data('key'), function(result) {
-        myChart.destroy();  
-        myChart = createChart(barChart, result.data);
-      });
-    });
+    })
 
     $('.refreshmetric').click(function() {
             

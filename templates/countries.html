@@ -44,7 +44,7 @@
   <select class="js-countries-multiple" id="multiselect-countries" name="countries[]" multiple="multiple" style="width: 100%">
     
       {% for x in country_list %}
-            <option value="{{ x.label }}">{{ x.label }}</option>
+            <option value="{{x.key}}">{{ x.label }}</option>
       {% endfor %}
   </select>
 
@@ -64,9 +64,6 @@
    <button class="refreshmetric" type="button" data-key="{{ m.key }}">{{ m.label }}</button>
   {% endfor %}
 
-  {% for c in country_list %}
-  <button class="refresh" type="button" data-key="{{ c.key }}">{{ c.label }}</button>
- {% endfor %}
 
 
  <!--* This map is created using amCharts 4 * Example code from this website was used and repurposed:
