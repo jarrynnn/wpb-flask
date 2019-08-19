@@ -57,14 +57,8 @@
   );
   </script>
 
-    <canvas id="bar-chart"></canvas>
 
-  {% for c in country_datas_list %}
-      {{ menu_item(c.metric.name) }}
 
-    <h2>Country : {{c.country.name}}  Number of Prisoners {{c.year}}: {{ c.value }}</h2>
-    <h2>Region : {{c.country.region.name}} </h2>
-  {% endfor %}
 
   {% for m in metric_list %}
    <button class="refreshmetric" type="button" data-key="{{ m.key }}">{{ m.label }}</button>
@@ -79,6 +73,8 @@
  * https://www.amcharts.com/-->
  
 <!-- Chart code -->
+
+<div id="chartdiv"></div>
 <script>
     am4core.ready(function() {
 
@@ -165,7 +161,8 @@ setState("US", false);
 </script>
 
 <!-- HTML -->
-<div id="chartdiv"></div>
+</div>
 
+<canvas id="bar-chart"></canvas>
 
 {% endblock %}

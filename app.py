@@ -108,7 +108,7 @@ def metricdata(countryref_id=None, metric_id=None):
 
 
 @app.route("/countries")
-@app.route("/countries/<country>")
+@app.route("/countries/<country_name>")
 def countries(country_name=None):
     return render_template(
         'countries.html',

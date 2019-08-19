@@ -7,6 +7,23 @@ $(function() {
     var myChart = createChart(barChart, [0, 0, 0]);
     var selectedCountries = []
 
+
+    $(".js-countries-multiple").on("select2:select select2:unselect", function (e) {
+
+      //this returns all the selected item
+      var items= $(this).val();       
+  
+      //Gets the last selected item
+      var lastSelectedItem = e.params.data.id;
+
+      $.get("/data/" + items('key'), function(result) {
+        myChart.destroy();  
+        myChart = createChart(barChart, result.data);
+      });
+  
+  })
+
+
     $('.refresh').click(function() {
             
     $.get("/data/" + $(this).data('key'), function(result) {
