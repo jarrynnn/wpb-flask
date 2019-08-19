@@ -17,6 +17,7 @@ class CountryRef(Base):
     __tablename__ = 'countryref'
     __table_args__ = {'extend_existing': True}
     id = Column(Integer, primary_key=True)
+    geo_id = Column(String(2), unique=True)     #for map integration (GEOJSON)
     region_id = Column(Integer, ForeignKey('region.id'))
     region = relationship("Region", back_populates="countries")
     name = Column(String(50), unique=True)

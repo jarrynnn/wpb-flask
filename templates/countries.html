@@ -100,11 +100,11 @@ polygonSeries.exclude = ["AQ"];
 polygonSeries.useGeodata = true;
 
 polygonSeries.data = [{
-  "id": "US",
-  "value": 100
-}, {
-  "id": "FR",
-  "value": 50
+  {% for c in country_datas_list %} //need to rewrite this in js
+    "id" : {{c.country.geo_id}},
+    "value": {{ c.value }}
+  {% endfor %}
+
 }];
 
 polygonSeries.heatRules.push({

@@ -25,9 +25,9 @@ def init_db(create_test_data=False):
         db_session.add(eu)
         db_session.add(na)
         
-        uk= models.CountryRef(region=eu, name='UK', colour="3e95cd")
-        fr= models.CountryRef(region=eu, name='France', colour="8e5ea2")
-        us= models.CountryRef(region=na, name='USA', colour="3cba9f")
+        uk= models.CountryRef(region=eu, name='UK', colour="3e95cd", geo_id = "GB")
+        fr= models.CountryRef(region=eu, name='France', colour="8e5ea2", geo_id = "FR")
+        us= models.CountryRef(region=na, name='USA', colour="3cba9f", geo_id  = "US")
 
         db_session.add(uk)
         db_session.add(fr)

@@ -68,7 +68,7 @@ def data(countryref_ids=None):
 def metricdata(countryref_ids=None, metric_id=1):
     country_list = countryref_ids.split(',')
     sel_metric = get_metric_by_id(metric_id)
-    if not sel_metric.trends_switch: #if there are no trends data, just look for current year, otherwise bring back all years
+    if not sel_metric.trends_switch: #if there are no trends data, just look for current year, otherwise bring back all years -may need ot think abou thow this brought back
         current_year = 2018         #change this to pick up from today's date!
     else: 
         current_year = None
