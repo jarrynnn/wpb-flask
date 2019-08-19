@@ -31,6 +31,21 @@ def home():
         **default_context()
     )
 
+@app.route('/data/', methods=['POST'])
+def get_data():
+    ids = request.form.getlist('countryref_ids', type=int)
+    users = []
+
+    for id in ids:
+        try:
+            user = whatever_user_method(id)
+            users.append(user)
+        except:
+            continue
+
+    returns users
+
+
 @app.route("/data/<countryref_id>")
 def data(countryref_id=None):
     #add in clause for when there are no countries selected (want 'world' data) or when there is more than one country selected 
