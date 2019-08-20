@@ -120,6 +120,7 @@ def countries(country_name=None):
             {
                 'key'       : c.id,
                 'label'     : c.name,
+                'geo_id'    : c.geo_id,
                 'region_id' : c.region_id,
                 'region'      : c.region,
                 'colour'    : "#" + c.colour,
@@ -133,6 +134,7 @@ def countries(country_name=None):
             {
             'key'       : c.id,
             'country'   : c.country,
+            'geo_id'    : c.country.geo_id,
             'metric'     :c.metric,
             'region'    : c.country.region,
             'year'      : c.year,
