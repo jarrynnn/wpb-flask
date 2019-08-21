@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, jsonify, request
 from database import db_session, init_db
 from models import get_countries, get_country, get_countrydatas, get_countrydatas_by_country_id, get_country_by_id, get_metrics, get_metric_by_id
-
+import datetime
 import json
 
 app = Flask(__name__)
@@ -68,12 +68,9 @@ def data(countryref_ids=None):
 def metricdata(countryref_ids=None, metric_id=1):
     country_list = countryref_ids.split(',')
     sel_metric = get_metric_by_id(metric_id)
-    if not sel_metric.trends_switch: #if there are no trends data, just look for current year, otherwise bring back all years -may need ot think abou thow this brought back
-        current_year = 2018         #change this to pick up from today's date!
-    else: 
-        current_year = None
+    #collect currentdata for all metrics
+    current_year = 2018         #change this to pick up from today's date! datetime.datetime.today().year
     
-
     key = []
     countryname = []
     countrycolour= []
@@ -81,27 +78,56 @@ def metricdata(countryref_ids=None, metric_id=1):
     region= []
     year= []
     value= []
+    geo_id = []
     
-    for country in country_list:
-        key += ([c.id for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-        value += ([c.value for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-        year += ([c.year for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-        countryname += ([c.country.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-        countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-        metric += ([c.metric.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-        region += ([c.country.region.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
 
-    data  = {   
+    for country in country_list:
+            key += ([c.id for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            value += ([c.value for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            year += ([c.year for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            countryname += ([c.country.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            metric += ([c.metric.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            region += ([c.country.region.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            geo_id += ([c.country.geo_id for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+
+    currentdata  = {   
                 'key'       : key,
                 'countryname'   : countryname,
                 'countrycolour'   : countrycolour,
+                'geo_id'    : geo_id,
                 'metric'     :metric,
                 'region'    : region,
                 'year'      : year,
                 'value'    : value,
-            }       
+            }
 
-    return jsonify(data=data)
+    #if there is also trends data for that metric, bring back all years as list (per country) of dicts (per year-value datapoints} for each country
+    if sel_metric.trends_switch: 
+        years_list = list(range(current_year-19, current_year+1))
+        trends_data = []
+        for year in years_list:
+            for country in country_list:
+            
+                trends_data += [
+                    {'key'       : c.id,
+                'country'   : c.country.name,
+                'geo_id'    : c.country.geo_id,
+                'metric'     :c.metric.name,
+                'region'    : c.country.region.name,
+                'year'      : year,
+                'value'    : c.value} for c in get_countrydatas_by_country_id(country, sel_metric.id, year)]
+    else:
+        trends_data= []
+        years_list = list(current_year)
+
+    mapdata = []
+    for country in country_list:
+        mapdata += [          
+             {'id'    : c.country.geo_id,
+             'value'    : c.value} for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)]
+
+    return jsonify(data=currentdata, mapdata = mapdata, years_list = years_list, trends_data = trends_data)
 
 
 @app.route("/countries")

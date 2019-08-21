@@ -6,8 +6,8 @@ $(function() {
     var barChart = $('#bar-chart');
  
     var myChart = createChart(barChart, [0, 0, 0]);
-    var map = $('#chartdiv');
-    var myMap = createMap(map, [{
+    var mapvar = $('#chartdiv');
+    var myMap = createMap(mapvar, [{
       "id": "US",
       "value": 0
     }, {
@@ -18,21 +18,22 @@ $(function() {
 
 
     $(".js-countries-multiple").on("select2:select select2:unselect", function (e) {
-      //this returns all the selected items
-    var items= $(this).val(); 
+      //this returns all the selected countries
+    var countries= $(this).val(); 
 
-    $.get("/data/" + items, function(result) {
+    $.get("/data/" + countries, function(result) {
         myChart.destroy();  
         myChart = createChart(barChart, result.data);
-        myMap.destroy();
+        alert (typeof myMap);
+        myMap.clear();
         var mapdata = [{
           "id": "US",
           "value": 100
         }, {
           "id": "FR",
           "value": 50
-        }]
-        myMap = createMap(map, mapdata);
+        }];
+        myMap = createMap(mapvar, mapdata); //will be results.mapdata once this is working
       });
     })
 
@@ -88,8 +89,7 @@ function createChart(canvas, data) {
     });
 }
 
-function createMap(map, data) {
-  alert(data);  
+function createMap(mapvar, data) { 
 
   // Themes begin
   am4core.useTheme(am4themes_animated);
@@ -120,8 +120,8 @@ function createMap(map, data) {
   polygonSeries.heatRules.push({
     "property": "fill",
     "target": polygonSeries.mapPolygons.template,
-    "min": am4core.color("#BBBBBB"),
-    "max": am4core.color("#AAAAAA")
+    "min": am4core.color("#cc4738"),
+    "max": am4core.color("#AA01256")
   });
   
   // Configure series
