@@ -1,61 +1,67 @@
 
 //barchart
-am4core.ready(
 $(function() {
-  //start by showing world total pp
+  am4core.ready(function() {
+        
+    //start by showing world total pp
     var selectedMetric = 1
     var barChart = $('#bar-chart');
- 
+
     var myChart = createChart(barChart, [0, 0, 0]);
     var mapvar = $('#chartdiv');
-    var myMap = createMap(mapvar, [{
-      "id": "US",
-      "value": 0
-    }, {
-      "id": "FR",
-      "value": 0
-    }]);  
-
-
-
-    $(".js-countries-multiple").on("select2:select select2:unselect", function (e) {
-      //this returns all the selected countries
-    var countries= $(this).val(); 
-
-    $.get("/data/" + countries + "/" + selectedMetric, function(result) {
-        myChart.destroy();  
-        myChart = createChart(barChart, result.data);
-        alert (typeof myMap);
-        myMap.clear();
-        var mapdata = [{
+    var myMap = createMap(mapvar,
+      [
+        {
           "id": "US",
-          "value": 100
+          "value": 0
         }, {
           "id": "FR",
-          "value": 50
-        }];
-        myMap = createMap(mapvar, mapdata); //will be results.mapdata once this is working
-      });
-    })
+          "value": 0
+        }
+      ]
+    );
 
+    $(".js-countries-multiple").on("select2:select select2:unselect",
+      function (e) {
+        //this returns all the selected countries
+        var countries= $(this).val(); 
 
-    $('.refreshmetric').click(function() {
-            
-    $.get("/data/" + $(".js-countries-multiple").val() + "/" + $(this).data('key'), function(result) {
+        $.get(
+          "/data/" + countries + "/" + selectedMetric,
+          function(result) {
+            myChart.destroy();  
+            myChart = createChart(barChart, result.data);
+            alert (typeof myMap);
+            myMap.clear();
+            var mapdata = [{
+              "id": "US",
+              "value": 100
+            }, {
+              "id": "FR",
+              "value": 50
+            }];
+            myMap = createMap(mapvar, mapdata); //will be results.mapdata once this is working
+          }
+        );
+      }
+    );
 
-          var selectedMetric = $(this).data('key')
+    $('.refreshmetric').click(
+      function() {
+        $.get(
+          "/data/" + $(".js-countries-multiple").val() + "/" + $(this).data('key'),
+          function(result) {
+            var selectedMetric = $(this).data('key')
 
-          myChart.destroy();  
-          myChart = createChart(barChart, result.data);
-          createMap(mapdata);
-        });
-    });
-
-  }));
-    
-
-
- 
+            myChart.destroy();  
+            myChart = createChart(barChart, result.data);
+            createMap(mapdata);
+          }
+        );
+      }
+    );
+  });
+});
 
 function createChart(canvas, data) {  
   
