@@ -100,6 +100,7 @@ def metricdata(countryref_ids=None, metric_id=1):
                 'region'    : region,
                 'year'      : year,
                 'value'    : value,
+                'label' : metric[0]
             }
 
     #if there is also trends data for that metric, bring back all years as list (per country) of dicts (per year-value datapoints} for each country

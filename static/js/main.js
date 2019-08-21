@@ -2,7 +2,8 @@
 //barchart
 am4core.ready(
 $(function() {
-
+  //start by showing world total pp
+    var selectedMetric = 1
     var barChart = $('#bar-chart');
  
     var myChart = createChart(barChart, [0, 0, 0]);
@@ -21,7 +22,7 @@ $(function() {
       //this returns all the selected countries
     var countries= $(this).val(); 
 
-    $.get("/data/" + countries, function(result) {
+    $.get("/data/" + countries + "/" + selectedMetric, function(result) {
         myChart.destroy();  
         myChart = createChart(barChart, result.data);
         alert (typeof myMap);
@@ -41,7 +42,8 @@ $(function() {
     $('.refreshmetric').click(function() {
             
     $.get("/data/" + $(".js-countries-multiple").val() + "/" + $(this).data('key'), function(result) {
-    //need to work out how to pass through the selected countries here (fixed at UK)
+
+          var selectedMetric = $(this).data('key')
 
           myChart.destroy();  
           myChart = createChart(barChart, result.data);
@@ -64,7 +66,7 @@ function createChart(canvas, data) {
         labels: data["countryname"],
         datasets: [
           {
-            label: data["metric"],
+            label: data["label"],
             //change this so it just shows one? Showing undefinded?
             backgroundColor: data["countrycolour"],
             data: data["value"]
@@ -75,7 +77,7 @@ function createChart(canvas, data) {
         legend: { display: false },
         title: { 
           display: true,
-            text: 'Total prison population'
+            text: data["label"]
             },
         scales: {
             yAxes: [{
