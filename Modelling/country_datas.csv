@@ -39,8 +39,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 38,129,Madagascar,1,Prison Population Total,2019,20975,NA
 39,18,Belgium,1,Prison Population Total,2019,10073,NA
 40,84,Guyana,1,Prison Population Total,2019,2200,NA
-41,#N/A,United Kingdom: Scotland,1,Prison Population Total,2019,8020,NA
-42,#N/A,United Kingdom: Northern Ireland,1,Prison Population Total,2019,1492,NA
 43,170,Romania,1,Prison Population Total,2019,20731,NA
 44,91,"Ireland, Republic of",1,Prison Population Total,2019,4000,NA
 45,6,Albania,1,Prison Population Total,2019,5280,NA
@@ -215,14 +213,12 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 214,156,Oman,1,Prison Population Total,2019,1300,NA
 215,31,Belarus,1,Prison Population Total,2019,32500,NA
 216,199,Tunisia,1,Prison Population Total,2019,20755,NA
-217,#N/A,Kosovo/Kosova,1,Prison Population Total,2019,1648,NA
 218,188,Sao Tome e Principe,1,Prison Population Total,2019,251,NA
 219,119,Liberia,1,Prison Population Total,2019,2211,NA
 220,2,United Arab Emirates,1,Prison Population Total,2019,9826,NA
 221,100,Jamaica,1,Prison Population Total,2019,3866,NA
 222,51,Djibouti,1,Prison Population Total,2019,600,NA
 223,114,Laos,1,Prison Population Total,2019,8201,NA
-224,#N/A,Bosnia and Herzegovina: Federation,1,Prison Population Total,2019,1722,NA
 225,191,Syria,1,Prison Population Total,2019,10599,NA
 226,45,Cuba,1,Prison Population Total,2019,57337,NA
 227,160,Papua New Guinea,2,Prison Population Rate,2019,62,NA
@@ -265,8 +261,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 264,129,Madagascar,2,Prison Population Rate,2019,81,NA
 265,18,Belgium,2,Prison Population Rate,2019,88,NA
 266,84,Guyana,2,Prison Population Rate,2019,283,NA
-267,#N/A,United Kingdom: Scotland,2,Prison Population Rate,2019,147,NA
-268,#N/A,United Kingdom: Northern Ireland,2,Prison Population Rate,2019,79,NA
 269,170,Romania,2,Prison Population Rate,2019,107,NA
 270,91,"Ireland, Republic of",2,Prison Population Rate,2019,82,NA
 271,6,Albania,2,Prison Population Rate,2019,185,NA
@@ -441,14 +435,12 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 440,156,Oman,2,Prison Population Rate,2019,36,NA
 441,31,Belarus,2,Prison Population Rate,2019,343,NA
 442,199,Tunisia,2,Prison Population Rate,2019,181,NA
-443,#N/A,Kosovo/Kosova,2,Prison Population Rate,2019,95,NA
 444,188,Sao Tome e Principe,2,Prison Population Rate,2019,117,NA
 445,119,Liberia,2,Prison Population Rate,2019,47,NA
 446,2,United Arab Emirates,2,Prison Population Rate,2019,104,NA
 447,100,Jamaica,2,Prison Population Rate,2019,138,NA
 448,51,Djibouti,2,Prison Population Rate,2019,66,NA
 449,114,Laos,2,Prison Population Rate,2019,119,NA
-450,#N/A,Bosnia and Herzegovina: Federation,2,Prison Population Rate,2019,73,NA
 451,191,Syria,2,Prison Population Rate,2019,60,NA
 452,45,Cuba,2,Prison Population Rate,2019,510,NA
 453,160,Papua New Guinea,3,Pre-trial Detainees (%),2019,34.4,NA
@@ -491,8 +483,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 490,129,Madagascar,3,Pre-trial Detainees (%),2019,55.8,NA
 491,18,Belgium,3,Pre-trial Detainees (%),2019,35.6,NA
 492,84,Guyana,3,Pre-trial Detainees (%),2019,35.6,NA
-493,#N/A,United Kingdom: Scotland,3,Pre-trial Detainees (%),2019,20.4,NA
-494,#N/A,United Kingdom: Northern Ireland,3,Pre-trial Detainees (%),2019,30.4,NA
 495,170,Romania,3,Pre-trial Detainees (%),2019,9.3,NA
 496,91,"Ireland, Republic of",3,Pre-trial Detainees (%),2019,16.6,NA
 497,6,Albania,3,Pre-trial Detainees (%),2019,40.7,NA
@@ -667,14 +657,12 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 666,156,Oman,3,Pre-trial Detainees (%),2019,5.6,NA
 667,31,Belarus,3,Pre-trial Detainees (%),2019,15.4,NA
 668,199,Tunisia,3,Pre-trial Detainees (%),2019,52,NA
-669,#N/A,Kosovo/Kosova,3,Pre-trial Detainees (%),2019,18.1,NA
 670,188,Sao Tome e Principe,3,Pre-trial Detainees (%),2019,33.5,NA
 671,119,Liberia,3,Pre-trial Detainees (%),2019,63,NA
 672,2,United Arab Emirates,3,Pre-trial Detainees (%),2019,38.2,NA
 673,100,Jamaica,3,Pre-trial Detainees (%),2019,23.1,NA
 674,51,Djibouti,3,Pre-trial Detainees (%),2019,20,NA
 675,114,Laos,3,Pre-trial Detainees (%),2019,1,NA
-676,#N/A,Bosnia and Herzegovina: Federation,3,Pre-trial Detainees (%),2019,12.5,NA
 677,191,Syria,3,Pre-trial Detainees (%),2019,50.5,NA
 678,45,Cuba,3,Pre-trial Detainees (%),2019,null,NA
 679,160,Papua New Guinea,4,Female Prisoners (%),2019,4.9,NA
@@ -717,8 +705,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 716,129,Madagascar,4,Female Prisoners (%),2019,4.9,NA
 717,18,Belgium,4,Female Prisoners (%),2019,4.5,NA
 718,84,Guyana,4,Female Prisoners (%),2019,3.5,NA
-719,#N/A,United Kingdom: Scotland,4,Female Prisoners (%),2019,4.8,NA
-720,#N/A,United Kingdom: Northern Ireland,4,Female Prisoners (%),2019,4.2,NA
 721,170,Romania,4,Female Prisoners (%),2019,4.6,NA
 722,91,"Ireland, Republic of",4,Female Prisoners (%),2019,4.4,NA
 723,6,Albania,4,Female Prisoners (%),2019,1.9,NA
@@ -893,14 +879,12 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 892,156,Oman,4,Female Prisoners (%),2019,4.5,NA
 893,31,Belarus,4,Female Prisoners (%),2019,7.5,NA
 894,199,Tunisia,4,Female Prisoners (%),2019,2.8,NA
-895,#N/A,Kosovo/Kosova,4,Female Prisoners (%),2019,2.5,NA
 896,188,Sao Tome e Principe,4,Female Prisoners (%),2019,4.4,NA
 897,119,Liberia,4,Female Prisoners (%),2019,2.3,NA
 898,2,United Arab Emirates,4,Female Prisoners (%),2019,11.7,NA
 899,100,Jamaica,4,Female Prisoners (%),2019,4.7,NA
 900,51,Djibouti,4,Female Prisoners (%),2019,5,NA
 901,114,Laos,4,Female Prisoners (%),2019,18.3,NA
-902,#N/A,Bosnia and Herzegovina: Federation,4,Female Prisoners (%),2019,2.9,NA
 903,191,Syria,4,Female Prisoners (%),2019,7.4,NA
 904,45,Cuba,4,Female Prisoners (%),2019,null,NA
 905,160,Papua New Guinea,5,Foreign Prisoners (%),2019,0.4,NA
@@ -943,8 +927,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 942,129,Madagascar,5,Foreign Prisoners (%),2019,0.1,NA
 943,18,Belgium,5,Foreign Prisoners (%),2019,44.3,NA
 944,84,Guyana,5,Foreign Prisoners (%),2019,1.5,NA
-945,#N/A,United Kingdom: Scotland,5,Foreign Prisoners (%),2019,3.9,NA
-946,#N/A,United Kingdom: Northern Ireland,5,Foreign Prisoners (%),2019,9,NA
 947,170,Romania,5,Foreign Prisoners (%),2019,1.2,NA
 948,91,"Ireland, Republic of",5,Foreign Prisoners (%),2019,13,NA
 949,6,Albania,5,Foreign Prisoners (%),2019,1.5,NA
@@ -1119,14 +1101,12 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 1118,156,Oman,5,Foreign Prisoners (%),2019,30.3,NA
 1119,31,Belarus,5,Foreign Prisoners (%),2019,3.1,NA
 1120,199,Tunisia,5,Foreign Prisoners (%),2019,null,NA
-1121,#N/A,Kosovo/Kosova,5,Foreign Prisoners (%),2019,5.7,NA
 1122,188,Sao Tome e Principe,5,Foreign Prisoners (%),2019,0.8,NA
 1123,119,Liberia,5,Foreign Prisoners (%),2019,2,NA
 1124,2,United Arab Emirates,5,Foreign Prisoners (%),2019,87.8,NA
 1125,100,Jamaica,5,Foreign Prisoners (%),2019,1.1,NA
 1126,51,Djibouti,5,Foreign Prisoners (%),2019,null,NA
 1127,114,Laos,5,Foreign Prisoners (%),2019,null,NA
-1128,#N/A,Bosnia and Herzegovina: Federation,5,Foreign Prisoners (%),2019,2.6,NA
 1129,191,Syria,5,Foreign Prisoners (%),2019,7.3,NA
 1130,45,Cuba,5,Foreign Prisoners (%),2019,null,NA
 1131,160,Papua New Guinea,6,Occupancy Level (%),2019,116.5,NA
@@ -1169,8 +1149,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 1168,129,Madagascar,6,Occupancy Level (%),2019,202.5,NA
 1169,18,Belgium,6,Occupancy Level (%),2019,109.3,NA
 1170,84,Guyana,6,Occupancy Level (%),2019,128.8,NA
-1171,#N/A,United Kingdom: Scotland,6,Occupancy Level (%),2019,92.9,NA
-1172,#N/A,United Kingdom: Northern Ireland,6,Occupancy Level (%),2019,76.1,NA
 1173,170,Romania,6,Occupancy Level (%),2019,113.8,NA
 1174,91,"Ireland, Republic of",6,Occupancy Level (%),2019,94.3,NA
 1175,6,Albania,6,Occupancy Level (%),2019,103.8,NA
@@ -1345,14 +1323,12 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 1344,156,Oman,6,Occupancy Level (%),2019,null,NA
 1345,31,Belarus,6,Occupancy Level (%),2019,83.4,NA
 1346,199,Tunisia,6,Occupancy Level (%),2019,114,NA
-1347,#N/A,Kosovo/Kosova,6,Occupancy Level (%),2019,87,NA
 1348,188,Sao Tome e Principe,6,Occupancy Level (%),2019,77.3,NA
 1349,119,Liberia,6,Occupancy Level (%),2019,165.7,NA
 1350,2,United Arab Emirates,6,Occupancy Level (%),2019,158.9,NA
 1351,100,Jamaica,6,Occupancy Level (%),2019,88.8,NA
 1352,51,Djibouti,6,Occupancy Level (%),2019,171.4,NA
 1353,114,Laos,6,Occupancy Level (%),2019,null,NA
-1354,#N/A,Bosnia and Herzegovina: Federation,6,Occupancy Level (%),2019,102.1,NA
 1355,191,Syria,6,Occupancy Level (%),2019,65.6,NA
 1356,45,Cuba,6,Occupancy Level (%),2019,null,NA
 1357,3,Afghanistan,1,Prison population Total,2004,5262,NA
@@ -1552,14 +1528,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 1551,26,Bolivia,1,Prison population Total,2012,14272,NA
 1552,26,Bolivia,1,Prison population Total,2014,14220,NA
 1553,26,Bolivia,1,Prison population Total,2016,16038,NA
-1554,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2000,1041,NA
-1555,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2002,1298,NA
-1556,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2004,1353,NA
-1557,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2006,1587,NA
-1558,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2008,1750,NA
-1559,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2010,1714,NA
-1560,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2012,1901,NA
-1561,#N/A,Bosnia and Herzegovina: Federation,1,Prison population Total,2013,1883,NA
 1562,15,Bosnia and Herzegovina: Republika Srpska,1,Prison population Total,1998,791,NA
 1563,15,Bosnia and Herzegovina: Republika Srpska,1,Prison population Total,2001,849,NA
 1564,15,Bosnia and Herzegovina: Republika Srpska,1,Prison population Total,2002,866,NA
@@ -1759,8 +1727,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 1758,49,Czech Republic,1,Prison population Total,2014,18658,NA
 1759,49,Czech Republic,1,Prison population Total,2016,22481,NA
 1760,49,Czech Republic,1,Prison population Total,2018,21577,NA
-1761,#N/A,Democratic Republic of Congo ,1,Prison population Total,2004,30000,NA
-1762,#N/A,Democratic Republic of Congo ,1,Prison population Total,2010,22000,NA
 1763,52,Denmark,1,Prison population Total,2000,3382,NA
 1764,52,Denmark,1,Prison population Total,2002,3435,NA
 1765,52,Denmark,1,Prison population Total,2004,3767,NA
@@ -2167,13 +2133,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 2166,106,Kiribati,1,Prison population Total,2011,1441,NA
 2167,106,Kiribati,1,Prison population Total,2013,1776,NA
 2168,106,Kiribati,1,Prison population Total,2015,1478,NA
-2169,#N/A,Kosovo/Kosova,1,Prison population Total,2000,3100,NA
-2170,#N/A,Kosovo/Kosova,1,Prison population Total,2002,2946,NA
-2171,#N/A,Kosovo/Kosova,1,Prison population Total,2005,3500,NA
-2172,#N/A,Kosovo/Kosova,1,Prison population Total,2009,4045,NA
-2173,#N/A,Kosovo/Kosova,1,Prison population Total,2011,4100,NA
-2174,#N/A,Kosovo/Kosova,1,Prison population Total,2013,2900,NA
-2175,#N/A,Kosovo/Kosova,1,Prison population Total,2015,4000,NA
 2176,111,Kuwait,1,Prison population Total,2000,20000,NA
 2177,111,Kuwait,1,Prison population Total,2002,19500,NA
 2178,111,Kuwait,1,Prison population Total,2004,16934,NA
@@ -2506,13 +2465,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 2505,149,Nigeria,1,Prison population Total,2014,56785,NA
 2506,149,Nigeria,1,Prison population Total,2016,63142,NA
 2507,149,Nigeria,1,Prison population Total,2018,71522,NA
-2508,#N/A,North Macedonia,1,Prison population Total,2000,97,NA
-2509,#N/A,North Macedonia,1,Prison population Total,2002,123,NA
-2510,#N/A,North Macedonia,1,Prison population Total,2004,150,NA
-2511,#N/A,North Macedonia,1,Prison population Total,2006,126,NA
-2512,#N/A,North Macedonia,1,Prison population Total,2008,124,NA
-2513,#N/A,North Macedonia,1,Prison population Total,2011,162,NA
-2514,#N/A,North Macedonia,1,Prison population Total,2014,175,NA
 2515,136,Northern Mariana Islands (USA),1,Prison population Total,2000,2548,NA
 2516,136,Northern Mariana Islands (USA),1,Prison population Total,2002,2832,NA
 2517,136,Northern Mariana Islands (USA),1,Prison population Total,2004,3028,NA
@@ -2732,11 +2684,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 2731,179,Singapore,1,Prison population Total,2012,12504,NA
 2732,179,Singapore,1,Prison population Total,2014,12596,NA
 2733,179,Singapore,1,Prison population Total,2016,12219,NA
-2734,#N/A,Sint Maarten (Netherlands) ,1,Prison population Total,2002,129,NA
-2735,#N/A,Sint Maarten (Netherlands) ,1,Prison population Total,2007,94,NA
-2736,#N/A,Sint Maarten (Netherlands) ,1,Prison population Total,2012,180,NA
-2737,#N/A,Sint Maarten (Netherlands) ,1,Prison population Total,2014,161,NA
-2738,#N/A,Sint Maarten (Netherlands) ,1,Prison population Total,2017,120,NA
 2739,181,Slovakia,1,Prison population Total,2000,6941,NA
 2740,181,Slovakia,1,Prison population Total,2002,7758,NA
 2741,181,Slovakia,1,Prison population Total,2004,9422,NA
@@ -2974,26 +2921,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 2973,68,United Kingdom: England & Wales,1,Prison population Total,2014,85307,NA
 2974,68,United Kingdom: England & Wales,1,Prison population Total,2016,85348,NA
 2975,68,United Kingdom: England & Wales,1,Prison population Total,2018,82773,NA
-2976,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2000,1068,NA
-2977,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2002,1026,NA
-2978,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2004,1274,NA
-2979,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2006,1433,NA
-2980,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2008,1490,NA
-2981,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2010,1465,NA
-2982,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2012,1774,NA
-2983,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2014,1830,NA
-2984,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2016,1482,NA
-2985,#N/A,United Kingdom: Northern Ireland,1,Prison population Total,2018,1521,NA
-2986,#N/A,United Kingdom: Scotland,1,Prison population Total,2000,5869,NA
-2987,#N/A,United Kingdom: Scotland,1,Prison population Total,2002,6404,NA
-2988,#N/A,United Kingdom: Scotland,1,Prison population Total,2004,6805,NA
-2989,#N/A,United Kingdom: Scotland,1,Prison population Total,2006,7111,NA
-2990,#N/A,United Kingdom: Scotland,1,Prison population Total,2008,7741,NA
-2991,#N/A,United Kingdom: Scotland,1,Prison population Total,2010,7806,NA
-2992,#N/A,United Kingdom: Scotland,1,Prison population Total,2012,8212,NA
-2993,#N/A,United Kingdom: Scotland,1,Prison population Total,2014,7819,NA
-2994,#N/A,United Kingdom: Scotland,1,Prison population Total,2016,7611,NA
-2995,#N/A,United Kingdom: Scotland,1,Prison population Total,2018,7595,NA
 2996,208,United States of America,1,Prison population Total,2000,1937482,NA
 2997,208,United States of America,1,Prison population Total,2002,2033022,NA
 2998,208,United States of America,1,Prison population Total,2004,2135335,NA
@@ -3272,14 +3199,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 3271,26,Bolivia,2,Prison population Rate,2012,135,NA
 3272,26,Bolivia,2,Prison population Rate,2014,130,NA
 3273,26,Bolivia,2,Prison population Rate,2016,142,NA
-3274,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2000,45,NA
-3275,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2002,56,NA
-3276,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2004,59,NA
-3277,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2006,69,NA
-3278,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2008,76,NA
-3279,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2010,75,NA
-3280,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2012,81,NA
-3281,#N/A,Bosnia and Herzegovina: Federation,2,Prison population Rate,2013,80,NA
 3282,15,Bosnia and Herzegovina: Republika Srpska,2,Prison population Rate,1998,57,NA
 3283,15,Bosnia and Herzegovina: Republika Srpska,2,Prison population Rate,2001,61,NA
 3284,15,Bosnia and Herzegovina: Republika Srpska,2,Prison population Rate,2002,62,NA
@@ -3479,8 +3398,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 3478,49,Czech Republic,2,Prison population Rate,2014,177,NA
 3479,49,Czech Republic,2,Prison population Rate,2016,213,NA
 3480,49,Czech Republic,2,Prison population Rate,2018,203,NA
-3481,#N/A,Democratic Republic of Congo ,2,Prison population Rate,2004,58,NA
-3482,#N/A,Democratic Republic of Congo ,2,Prison population Rate,2010,35,NA
 3483,52,Denmark,2,Prison population Rate,2000,63,NA
 3484,52,Denmark,2,Prison population Rate,2002,64,NA
 3485,52,Denmark,2,Prison population Rate,2004,70,NA
@@ -3887,13 +3804,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 3886,106,Kiribati,2,Prison population Rate,2011,81,NA
 3887,106,Kiribati,2,Prison population Rate,2013,98,NA
 3888,106,Kiribati,2,Prison population Rate,2015,84,NA
-3889,#N/A,Kosovo/Kosova,2,Prison population Rate,2000,162,NA
-3890,#N/A,Kosovo/Kosova,2,Prison population Rate,2002,142,NA
-3891,#N/A,Kosovo/Kosova,2,Prison population Rate,2005,152,NA
-3892,#N/A,Kosovo/Kosova,2,Prison population Rate,2009,142,NA
-3893,#N/A,Kosovo/Kosova,2,Prison population Rate,2011,131,NA
-3894,#N/A,Kosovo/Kosova,2,Prison population Rate,2013,86,NA
-3895,#N/A,Kosovo/Kosova,2,Prison population Rate,2015,112,NA
 3896,111,Kuwait,2,Prison population Rate,2000,402,NA
 3897,111,Kuwait,2,Prison population Rate,2002,390,NA
 3898,111,Kuwait,2,Prison population Rate,2004,338,NA
@@ -4226,13 +4136,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 4225,149,Nigeria,2,Prison population Rate,2014,32,NA
 4226,149,Nigeria,2,Prison population Rate,2016,34,NA
 4227,149,Nigeria,2,Prison population Rate,2018,36,NA
-4228,#N/A,North Macedonia,2,Prison population Rate,2000,141,NA
-4229,#N/A,North Macedonia,2,Prison population Rate,2002,181,NA
-4230,#N/A,North Macedonia,2,Prison population Rate,2004,230,NA
-4231,#N/A,North Macedonia,2,Prison population Rate,2006,207,NA
-4232,#N/A,North Macedonia,2,Prison population Rate,2008,220,NA
-4233,#N/A,North Macedonia,2,Prison population Rate,2011,304,NA
-4234,#N/A,North Macedonia,2,Prison population Rate,2014,319,NA
 4235,136,Northern Mariana Islands (USA),2,Prison population Rate,2000,57,NA
 4236,136,Northern Mariana Islands (USA),2,Prison population Rate,2002,62,NA
 4237,136,Northern Mariana Islands (USA),2,Prison population Rate,2004,66,NA
@@ -4452,11 +4355,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 4451,179,Singapore,2,Prison population Rate,2012,234,NA
 4452,179,Singapore,2,Prison population Rate,2014,227,NA
 4453,179,Singapore,2,Prison population Rate,2016,213,NA
-4454,#N/A,Sint Maarten (Netherlands) ,2,Prison population Rate,2002,396,NA
-4455,#N/A,Sint Maarten (Netherlands) ,2,Prison population Rate,2007,235,NA
-4456,#N/A,Sint Maarten (Netherlands) ,2,Prison population Rate,2012,405,NA
-4457,#N/A,Sint Maarten (Netherlands) ,2,Prison population Rate,2014,347,NA
-4458,#N/A,Sint Maarten (Netherlands) ,2,Prison population Rate,2017,285,NA
 4459,181,Slovakia,2,Prison population Rate,2000,129,NA
 4460,181,Slovakia,2,Prison population Rate,2002,144,NA
 4461,181,Slovakia,2,Prison population Rate,2004,175,NA
@@ -4694,26 +4592,6 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 4693,68,United Kingdom: England & Wales,2,Prison population Rate,2014,149,NA
 4694,68,United Kingdom: England & Wales,2,Prison population Rate,2016,146,NA
 4695,68,United Kingdom: England & Wales,2,Prison population Rate,2018,140,NA
-4696,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2000,64,NA
-4697,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2002,60,NA
-4698,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2004,75,NA
-4699,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2006,82,NA
-4700,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2008,84,NA
-4701,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2010,81,NA
-4702,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2012,97,NA
-4703,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2014,99,NA
-4704,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2016,80,NA
-4705,#N/A,United Kingdom: Northern Ireland,2,Prison population Rate,2018,81,NA
-4706,#N/A,United Kingdom: Scotland,2,Prison population Rate,2000,116,NA
-4707,#N/A,United Kingdom: Scotland,2,Prison population Rate,2002,127,NA
-4708,#N/A,United Kingdom: Scotland,2,Prison population Rate,2004,134,NA
-4709,#N/A,United Kingdom: Scotland,2,Prison population Rate,2006,139,NA
-4710,#N/A,United Kingdom: Scotland,2,Prison population Rate,2008,150,NA
-4711,#N/A,United Kingdom: Scotland,2,Prison population Rate,2010,150,NA
-4712,#N/A,United Kingdom: Scotland,2,Prison population Rate,2012,155,NA
-4713,#N/A,United Kingdom: Scotland,2,Prison population Rate,2014,146,NA
-4714,#N/A,United Kingdom: Scotland,2,Prison population Rate,2016,141,NA
-4715,#N/A,United Kingdom: Scotland,2,Prison population Rate,2018,140,NA
 4716,208,United States of America,2,Prison population Rate,2000,683,NA
 4717,208,United States of America,2,Prison population Rate,2002,703,NA
 4718,208,United States of America,2,Prison population Rate,2004,725,NA
@@ -4795,14 +4673,3 @@ id,countryref_id,country,metric_id,metric,year,value,exp_value
 4794,222,Zimbabwe,2,Prison population Rate,2012,115,NA
 4795,222,Zimbabwe,2,Prison population Rate,2014,115,NA
 4796,222,Zimbabwe,2,Prison population Rate,2017,120,NA
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
