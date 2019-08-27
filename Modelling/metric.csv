@@ -1,0 +1,7 @@
+﻿name,id,trends_switch,sum_or_ave_switch
+Prison Population Total,1,1,1
+Prison Population Rate,2,1,0
+Pre-trial Detainees (%),3,0,0
+Female Prisoners (%),4,0,0
+Foreign Prisoners (%),5,0,0
+Occupancy Level (%),6,0,0

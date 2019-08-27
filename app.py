@@ -69,7 +69,6 @@ def metricdata(countryref_ids=None, metric_id=1):
     country_list = countryref_ids.split(',')
     sel_metric = get_metric_by_id(metric_id)
     #collect currentdata for all metrics
-    current_year = 2018         #change this to pick up from today's date! datetime.datetime.today().year
     
     key = []
     countryname = []
@@ -82,9 +81,11 @@ def metricdata(countryref_ids=None, metric_id=1):
     
 
     for country in country_list:
+            latest = (max([int(c.year) for c in get_countrydatas_by_country_id(country, sel_metric.id)]))
+            current_year = latest
             key += ([c.id for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
             value += ([c.value for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
-            year += ([c.year for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
+            year += ([int(c.year) for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
             countryname += ([c.country.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
             countrycolour += (["#"+c.country.colour for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
             metric += ([c.metric.name for c in get_countrydatas_by_country_id(country, sel_metric.id, current_year)])
@@ -120,7 +121,7 @@ def metricdata(countryref_ids=None, metric_id=1):
                 'value'    : c.value} for c in get_countrydatas_by_country_id(country, sel_metric.id, year)]
     else:
         trends_data= []
-        years_list = list(current_year)
+        years_list = [current_year]
 
     mapdata = []
     for country in country_list:

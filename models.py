@@ -46,8 +46,8 @@ class CountryData(Base):
     metric_id = Column(Integer, ForeignKey('metric.id'))
     metric = relationship("Metric", back_populates="country_datas")
     year = Column(Integer, nullable=False)
-    value = Column(Integer, nullable=False)
-    exp_value = Column(Integer, nullable=False)
+    value = Column(Integer, nullable=True)
+    exp_value = Column(Integer, nullable=True)
 
  
     def __repr__(self):
@@ -63,6 +63,13 @@ class SimilarCountriesRef(Base):
     country2_id = Column(Integer, nullable=False)
     country3_id = Column(Integer, nullable=False)
     country4_id = Column(Integer, nullable=False)
+    country5_id = Column(Integer, nullable=False)
+    country6_id = Column(Integer, nullable=False)
+    country7_id = Column(Integer, nullable=False)
+    country8_id = Column(Integer, nullable=False)
+    country9_id = Column(Integer, nullable=False)
+    country10_id = Column(Integer, nullable=False)
+
 
 
 #def get_countrydatas_by_country_id(id):
