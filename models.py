@@ -47,6 +47,7 @@ class CountryData(Base):
     metric = relationship("Metric", back_populates="country_datas")
     year = Column(Integer, nullable=False)
     value = Column(Integer, nullable=False)
+    exp_value = Column(Integer, nullable=False)
 
  
     def __repr__(self):
